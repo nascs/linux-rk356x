@@ -22,7 +22,7 @@ jobs:
           echo "revision=${VERSION#*-}" >> $GITHUB_ENV
           echo "tag_name=${VERSION}" >> $GITHUB_ENV
       - name: Build
-        uses: radxa-repo/bsp@main
+        uses: nascs/bsp@sensor_from_forum
         with:
           target: linux
           edition: rk356x
@@ -43,7 +43,7 @@ jobs:
             VERSION
             pkg.conf
       - name: Update Test repos
-        uses: radxa-repo/update-repo-action@main
+        uses: nascs/update-repo-action@sensor_from_forum
         with:
           test-repo: true
           token: ${{ secrets.RADXA_APT_TEST_REPO_TOKEN }}
